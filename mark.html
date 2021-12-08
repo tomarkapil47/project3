@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mark.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="markbox">
+            <div>
+                <label for="maths">
+                    <Maths:->Maths:-
+                </label>
+                <input type="text" name="" id="maths">
+            </div>
+            <div>
+                <label for="science">Science:-</label>
+                <input type="text" name="" id="science">
+            </div>
+            <div>
+                <label for="english">English:-</label>
+                <input type="text" name="" id="english">
+            </div>
+            <button id="btn" onclick="result()">Submit</button>
+            <hr>
+            <div class="table-box">
+                <table>
+                    <thead>
+                        <tr>
+                            <td>Total</td>
+                            <td>500</td>
+                        </tr>
+                        <tr>
+                            <td>Obtain-Marks</td>
+                            <td id="obtain"></td>
+                        </tr>
+                        <tr>
+                            <td>Percentage</td>
+                            <td id="per"></td>
+                        </tr>
+                        <tr>
+                            <td>Grade</td>
+                            <td id="gra"></td>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script>
+        function result() {
+            var x = document.getElementById("maths").value;
+            var y = document.getElementById("science").value;
+            var z = document.getElementById("english").value;
+           
+            var grade = document.getElementById("gra")
+
+            var obtain = document.getElementById("obtain")
+            var per = document.getElementById("per")
+           
+            if (x > 100 || y > 100 || z > 100) {
+                alert("Enter  The Valid Number")
+            }
+            else {
+                var total = parseInt(x) + parseInt(y) + parseInt(z);
+                obtain.innerHTML = total
+                percentage = total / 3;
+                per.innerHTML = percentage + "%";
+
+
+                if (percentage >= 80) {
+                    grade.textContent = "A"
+
+                }
+                else if(percentage >=60) {
+                    grade.textContent = "B"
+                }
+                else if(percentage >=40){
+                    grade.textContent="C"
+                }
+                else if(percentage >=33){
+                    grade.textContent="Le dekar pass"
+                }
+                else{
+                    grade.textContent="fail"
+                }
+
+            }
+
+
+        }
+
+
+    </script>
+
+</body>
+
+</html>
